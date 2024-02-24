@@ -25,7 +25,7 @@
         <activity android:name=".CarnivoresActivity" />
         <activity android:name=".Animal" />
         <activity android:name=".RaptorsActivity" />
-
+        <activity android:name="AnimalListAdapter" />
     </application>
 
 </manifest>

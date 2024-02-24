@@ -2,24 +2,31 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp">
+    android:padding="8dp">
 
-    <ImageButton
-        android:id="@+id/imageButtonAnimal"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+    <ImageView
+        android:id="@+id/imageViewAnimal"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:scaleType="centerCrop"
         android:layout_alignParentStart="true"
-        android:scaleType="fitCenter"
-        android:src="@drawable/placeholder_image" />
+        android:layout_centerVertical="true" />
 
     <TextView
         android:id="@+id/textViewAnimalName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/imageButtonAnimal"
+        android:layout_toEndOf="@+id/imageViewAnimal"
+        android:layout_marginStart="8dp"
         android:layout_centerVertical="true"
-        android:layout_marginStart="16dp"
-        android:textSize="18sp"
-        android:text="Nombre del animal" />
-
+        android:textSize="14sp"
+        android:textAlignment="center" />
+    <View
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/imageViewAnimal"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/black" />
 </RelativeLayout>
+

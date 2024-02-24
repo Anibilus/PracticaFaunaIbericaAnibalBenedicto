@@ -8,7 +8,7 @@
         android:id="@+id/imageViewAnimal"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentStart="true"
         android:scaleType="centerCrop"
         android:src="@drawable/placeholder_image" />
 
@@ -16,29 +16,26 @@
         android:id="@+id/textViewAnimalName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/imageViewAnimal"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@id/imageViewAnimal"
+        android:layout_marginStart="20dp"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:text="Animal No Encontrado" />
+        android:text="Nombre del animal" />
 
-    <!-- ScrollView envuelve la sección de información para permitir el desplazamiento -->
     <ScrollView
+        android:id="@+id/scrollViewAnimalInfo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/textViewAnimalName"
+        android:layout_below="@id/imageViewAnimal"
         android:layout_marginTop="10dp">
 
         <TextView
             android:id="@+id/textViewAnimalInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:textSize="18sp"
-            android:text="Lo siento el animal seleccionado no tiene información te dejo un Tucan como recompensa" />
+            android:text="Información del animal" />
 
     </ScrollView>
 
 </RelativeLayout>
-

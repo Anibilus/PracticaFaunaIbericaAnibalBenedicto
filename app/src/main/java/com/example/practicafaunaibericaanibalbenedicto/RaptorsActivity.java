@@ -1,32 +1,43 @@
 package com.example.practicafaunaibericaanibalbenedicto;
 
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
-
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RaptorsActivity extends AppCompatActivity {
+
+    private List<Animal> raptorsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_raptors);
 
-        ListView listViewRaptors = findViewById(R.id.listViewRaptors);
-        TextView textViewRaptorsTitle = findViewById(R.id.textViewRaptorsTitle);
+        raptorsList = getRaptorsList();
 
-        // Ejemplo de lista de aves rapaces
-        String[] raptorsArray = {"Águila", "Halcón", "Búho", "Cóndor", "Gavilán"};
+        RecyclerView recyclerViewAnimals = findViewById(R.id.recyclerViewRaptors);
+        recyclerViewAnimals.setLayoutManager(new LinearLayoutManager(this));
 
-        // Crear un adaptador para la lista
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, raptorsArray);
+        AnimalAdapter adapter = new AnimalAdapter(this, raptorsList);
+        recyclerViewAnimals.setAdapter(adapter);
+    }
 
-        // Asignar el adaptador a la lista
-        listViewRaptors.setAdapter(adapter);
+    private List<Animal> getRaptorsList() {
+        List<Animal> raptors = new ArrayList<>();
+        raptors.add(new Animal("Águila Real", R.drawable.aguila_real_image, R.raw.aguila_real));
+        raptors.add(new Animal("Cóndor", R.drawable.condor_image, R.raw.condor_info));
+        raptors.add(new Animal("Águila Calva", R.drawable.aguila_calva_image, R.raw.aguila_calva_info));
+        raptors.add(new Animal("Buitre Negro", R.drawable.buitre_negro_image, R.raw.buitre_negro_info));
+        raptors.add(new Animal("Aguilucho", R.drawable.aguilucho_image, R.raw.aguilucho_info));
+        raptors.add(new Animal("Animal_inventado"));
+        raptors.add(new Animal("Animal_inventado2", R.drawable.animal_inventado2));
+        raptors.add(new Animal("periquito"));
+        raptors.add(new Animal());
 
-        // Configurar el título de la lista
-        textViewRaptorsTitle.setText("Aves Rapaces");
+        return raptors;
     }
 }

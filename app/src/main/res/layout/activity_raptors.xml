@@ -1,26 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".RaptorsActivity">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textViewRaptorsTitle"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewRaptors"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Aves Rapaces"
-        android:textSize="20sp"
-        android:gravity="center"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"/>
-
-    <ListView
-        android:id="@+id/listViewRaptors"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textViewRaptorsTitle"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"/>
+        android:layout_height="match_parent" />
 
 </RelativeLayout>
+

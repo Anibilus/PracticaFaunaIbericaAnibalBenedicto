@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         btnCarnivores.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Iniciar la actividad de carnívoros
+                Log.d("MainActivity", "Botón de carnívoros presionado");
                 startActivity(new Intent(MainActivity.this, CarnivoresActivity.class));
             }
         });
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         btnRaptors.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Iniciar la actividad de rapaces
+                Log.d("MainActivity", "Botón de rapaces presionado");
                 startActivity(new Intent(MainActivity.this, RaptorsActivity.class));
             }
         });
